@@ -1,0 +1,48 @@
+{
+  "_annotation": {
+    "id": "tools.pca_config",
+    "kind": "config",
+    "desc": "Manifiesto del anotador PCA (JSON no admite comentarios; esta clave cumple el rol de bloque)",
+    "relates": ["tools.pca_annotator"]
+  },
+  "base_dir": "..",
+  "roots": ["docs", "tools"],
+  "include": ["**/*.py", "**/*.md", "**/*.css", "**/*.html"],
+  "exclude": ["**/grafo.*", "**/*.bak"],
+  "files": [
+    {
+      "path": "tools/pca_annotator.py",
+      "id": "tools.pca_annotator",
+      "kind": "service",
+      "limit": 500,
+      "contract": "cli: annotate|graph|impact|check",
+      "desc": "CLI para inyectar anotaciones PCA y generar el grafo de impacto del proyecto",
+      "relates": ["docs.sistema_anotaciones", "docs.convenciones"]
+    },
+    {
+      "path": "tools/README.md",
+      "id": "tools.readme",
+      "kind": "doc",
+      "desc": "Guía de uso del anotador PCA y cómo agregar lenguajes",
+      "relates": ["tools.pca_annotator"]
+    },
+    {
+      "path": "docs/sistema_anotaciones.md",
+      "id": "docs.sistema_anotaciones",
+      "kind": "doc",
+      "desc": "Diccionario de anotaciones PCA y cómo usarlas",
+      "relates": ["tools.pca_annotator"]
+    },
+    {
+      "path": "docs/convenciones.md",
+      "id": "docs.convenciones",
+      "kind": "doc",
+      "desc": "Convenciones generales del proyecto",
+      "relates": ["docs.sistema_anotaciones"]
+    }
+  ],
+  "options": {
+    "output_dir": "."
+  },
+  "languages": {}
+}
