@@ -1,0 +1,51 @@
+graph LR
+    docs_arquitectura["docs.arquitectura (doc)"]
+    docs_backlog_requisitos["docs.backlog_requisitos (doc)"]
+    docs_convenciones["docs.convenciones (doc)"]
+    docs_estado_proyecto["docs.estado_proyecto (doc)"]
+    docs_modelo_datos["docs.modelo_datos (doc)"]
+    docs_plan_sprints["docs.plan_sprints (doc)"]
+    docs_reglas_backend["docs.reglas_backend (doc)"]
+    docs_reglas_ui["docs.reglas_ui (doc)"]
+    docs_sistema_anotaciones["docs.sistema_anotaciones (doc)"]
+    tools_pca_annotator["tools.pca_annotator (service)"]
+    tools_pca_core["tools.pca_core (service)"]
+    tools_pca_selftest["tools.pca_selftest (test)"]
+    tools_readme["tools.readme (doc)"]
+    docs_arquitectura --> docs_modelo_datos
+    docs_arquitectura --> docs_reglas_backend
+    docs_arquitectura --> docs_reglas_ui
+    docs_arquitectura --> docs_estado_proyecto
+    docs_backlog_requisitos --> docs_convenciones
+    docs_backlog_requisitos --> docs_reglas_backend
+    docs_backlog_requisitos --> docs_reglas_ui
+    docs_convenciones --> docs_sistema_anotaciones
+    docs_estado_proyecto --> docs_convenciones
+    docs_estado_proyecto --> docs_backlog_requisitos
+    docs_estado_proyecto --> docs_modelo_datos
+    docs_estado_proyecto --> docs_arquitectura
+    docs_estado_proyecto --> docs_plan_sprints
+    docs_modelo_datos --> docs_backlog_requisitos
+    docs_modelo_datos --> docs_arquitectura
+    docs_modelo_datos --> docs_reglas_backend
+    docs_plan_sprints --> docs_estado_proyecto
+    docs_plan_sprints --> docs_backlog_requisitos
+    docs_plan_sprints --> docs_convenciones
+    docs_plan_sprints --> docs_reglas_backend
+    docs_plan_sprints --> docs_reglas_ui
+    docs_reglas_backend --> docs_convenciones
+    docs_reglas_backend --> docs_modelo_datos
+    docs_reglas_backend --> docs_arquitectura
+    docs_reglas_ui --> docs_convenciones
+    docs_reglas_ui --> docs_arquitectura
+    docs_sistema_anotaciones --> tools_pca_annotator
+    tools_readme --> tools_pca_annotator
+    tools_pca_annotator --> tools_pca_core
+    tools_pca_annotator --> tools_pca_selftest
+    tools_pca_annotator --> tools_readme
+    tools_pca_annotator --> docs_sistema_anotaciones
+    tools_pca_annotator --> docs_convenciones
+    tools_pca_core --> tools_pca_annotator
+    tools_pca_core --> tools_pca_selftest
+    tools_pca_selftest --> tools_pca_core
+    tools_pca_selftest --> tools_pca_annotator

@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-error":"#ffffff","on-secondary-fixed":"#241a00","primary":"#012d1d","error-container":"#ffdad6","on-secondary-fixed-variant":"#574500","on-surface":"#181c20","error":"#ba1a1a","on-tertiary":"#ffffff","surface-tint":"#3f6653","inverse-primary":"#a5d0b9","surface-container-low":"#f1f4f9","surface-dim":"#d7dadf","on-tertiary-fixed-variant":"#603b54","surface-container":"#ebeef3","surface-variant":"#e0e3e8","primary-container":"#1b4332","on-background":"#181c20","tertiary-container":"#533048","surface-container-high":"#e5e8ee","outline":"#717973","secondary-fixed":"#ffe088","primary-fixed-dim":"#a5d0b9","on-primary":"#ffffff","on-primary-fixed":"#002114","on-secondary":"#ffffff","secondary-fixed-dim":"#e9c349","on-surface-variant":"#414844","tertiary-fixed":"#ffd7ef","background":"#f7f9ff","on-tertiary-fixed":"#2f1027","tertiary-fixed-dim":"#e9b8d7","inverse-on-surface":"#eef1f6","on-error-container":"#93000a","inverse-surface":"#2d3135","surface-container-highest":"#e0e3e8","surface-container-lowest":"#ffffff","secondary-container":"#fed65b","on-secondary-container":"#745c00","surface-bright":"#f7f9ff","primary-fixed":"#c1ecd4","on-tertiary-container":"#c798b6","on-primary-fixed-variant":"#274e3d","outline-variant":"#c1c8c2","secondary":"#735c00","on-primary-container":"#86af99","tertiary":"#3b1b32","surface":"#f7f9ff"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-xl":"2.5rem","space-sm":"0.5rem","space-md":"1rem",margin:"3rem","margin-mobile":"1.25rem","gutter-mobile":"1rem","space-xs":"0.25rem","space-lg":"1.5rem",gutter:"1.5rem"},fontFamily:{"display-hero-mobile":["Playfair Display"],"headline-md":["Playfair Display"],"body-sm":["Plus Jakarta Sans"],"title-lg":["Plus Jakarta Sans"],"title-md":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"headline-sm":["Playfair Display"],"label-lg":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"display-hero":["Playfair Display"],"body-lg":["Plus Jakarta Sans"],"headline-lg":["Playfair Display"],"headline-lg-mobile":["Playfair Display"],"body-md":["Plus Jakarta Sans"]},fontSize:{"display-hero-mobile":["36px",{lineHeight:"44px",letterSpacing:"-0.01em",fontWeight:"700"}],"headline-md":["28px",{lineHeight:"36px",fontWeight:"600"}],"body-sm":["13px",{lineHeight:"20px",fontWeight:"400"}],"title-lg":["18px",{lineHeight:"26px",fontWeight:"600"}],"title-md":["16px",{lineHeight:"24px",fontWeight:"600"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.06em",fontWeight:"700"}],"headline-sm":["22px",{lineHeight:"30px",fontWeight:"500"}],"label-lg":["14px",{lineHeight:"20px",letterSpacing:"0.02em",fontWeight:"600"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.04em",fontWeight:"600"}],"display-hero":["56px",{lineHeight:"64px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-lg":["18px",{lineHeight:"28px",fontWeight:"400"}],"headline-lg":["40px",{lineHeight:"48px",letterSpacing:"-0.015em",fontWeight:"600"}],"headline-lg-mobile":["28px",{lineHeight:"36px",fontWeight:"600"}],"body-md":["15px",{lineHeight:"24px",fontWeight:"400"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col pt-space-md pb-space-lg shadow-[0_4px_16px_-2px_rgba(27,67,50,0.08)]"><div class="px-space-lg mb-space-lg flex items-center gap-space-sm"><img alt="Enchanted Botanicals Emblem" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAohLZRpg9ok06W5vDtLdTWNSBTZ3kody1HZNNdBt9YdF3JVYj22fspB4SoVi1k1PDI_8h_tEyh5zK4FGcXSsnzGrZGJ00ovW2xj2i1fzmXBBJ5K1PSI0EBbXSa0RPCocss3RKOnUT1SKSMa9VkuqYspZdJpfKcc8hmxXQLmdRNiKt2W_uBnfZjR5q43aLe0nYOJiiSMZsZZzOAGkbsmPA62-eqwIfWYP9xakoBeL2-JcYWcYXPJVUtFQ"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary font-bold leading-tight">Enchanted</span><span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest font-bold">Corte Administrativa</span></div></div><div class="px-space-md mb-space-sm"><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline px-space-sm font-semibold">Conservatorio Central</span></div><nav class="flex-1 px-space-md flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-bold rounded-xl"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="panel-de-gestion" href="#"><span class="material-symbols-outlined text-[22px]">potted_plant</span><span class="font-label-lg text-label-lg">Gestión de Especies</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="inventario-invernaderos" href="#"><span class="material-symbols-outlined text-[22px]">inventory_2</span><span class="font-label-lg text-label-lg">Inventario Mágico</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="ciclo-vital-botanico" href="#"><span class="material-symbols-outlined text-[22px]">eco</span><span class="font-label-lg text-label-lg">Ciclo Vital &amp; Riego</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="pedidos-arcanos" href="#"><span class="material-symbols-outlined text-[22px]">local_shipping</span><span class="font-label-lg text-label-lg">Envíos &amp; Pergaminos</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="analitica-invernadero" href="#"><span class="material-symbols-outlined text-[22px]">insights</span><span class="font-label-lg text-label-lg">Sensorica y Clima</span></a><div class="pt-space-md pb-space-xs"><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline px-space-sm font-semibold">Retorno al Jardín</span></div><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="inicio" href="#"><span class="material-symbols-outlined text-[22px]">cottage</span><span class="font-label-lg text-label-lg">Tienda Pública</span></a></nav><div class="px-space-md pt-space-sm"><div class="bg-surface-container rounded-xl p-space-sm flex items-center gap-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC07-dnNkiA7lPQSx-Lc4N6sICJeU2O7TRaDlzxtUp_nXDkOZnMJagvkKJk1t_cGmiWwxUetUlemt3GM1l76HpCyvKZBCZhGDVu-3Hffz29OjLn0Pgx2nYSH55W4kcNtmntE2LsGyhuOWMYFyuwaKOfI_KLPNyGfRgTfcnPMwYyiAmlo8GIpusOhOrLS708JOSLnL-IYV9eTLsCcrYpZSS5T0QiaYUgjbUPAVaqVYwDebBtGcer8KZOzA"/><div class="flex flex-col"><span class="font-label-md text-label-md text-on-surface font-semibold">Archicanciller</span><span class="font-label-sm text-label-sm text-outline">Botánico Mayor</span></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-20 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center bg-surface-container-lowest rounded-full px-space-md py-space-xs shadow-[0_1px_8px_rgba(0,0,0,0.04)] w-80"><span class="material-symbols-outlined text-outline text-[20px] mr-space-xs">search</span><input class="bg-transparent font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none w-full" placeholder="Buscar en bóveda de especímenes..." type="text"/></div><div class="flex items-center gap-space-md"><button aria-label="Alertas de Invernadero" class="p-space-xs text-on-surface-variant hover:text-on-surface transition-colors relative flex items-center justify-center"><span class="material-symbols-outlined text-[24px]">nest_farsight_weather</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-secondary-container"></span></button><button aria-label="Mensajería Feérica" class="p-space-xs text-on-surface-variant hover:text-on-surface transition-colors relative flex items-center justify-center"><span class="material-symbols-outlined text-[24px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-space-xs pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC07-dnNkiA7lPQSx-Lc4N6sICJeU2O7TRaDlzxtUp_nXDkOZnMJagvkKJk1t_cGmiWwxUetUlemt3GM1l76HpCyvKZBCZhGDVu-3Hffz29OjLn0Pgx2nYSH55W4kcNtmntE2LsGyhuOWMYFyuwaKOfI_KLPNyGfRgTfcnPMwYyiAmlo8GIpusOhOrLS708JOSLnL-IYV9eTLsCcrYpZSS5T0QiaYUgjbUPAVaqVYwDebBtGcer8KZOzA"/><span class="font-label-md text-label-md text-on-surface font-medium hidden sm:inline-block">Conservatorio Central</span></div></div></header><main class="relative w-full pt-20 px-space-lg pb-space-xl bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Dynamic Atmospheric Underlay Decor (Constrained) -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-24 right-10 w-96 h-96 rounded-full bg-secondary-container/15 blur-3xl pointer-events-none"></div>
+<div class="absolute top-48 left-1/3 w-80 h-80 rounded-full bg-primary/5 blur-2xl pointer-events-none"></div>
+<!-- Sub-header & Greenhouse Filter Context Bar -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md mb-space-lg">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs text-secondary mb-1">
+<span class="material-symbols-outlined text-[16px]">auto_awesome</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest font-bold">Cámara Regia de Control</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-outline">Solsticio de Primavera</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight font-bold">
+          Jardín de Operaciones &amp; Comercio Mágico
+        </h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-2xl mt-1">
+          Supervisión en tiempo real de especímenes bajo encanto, equilibrio de humedad feérica y despacho de encomiendas imperiales.
+        </p>
+</div>
+<!-- Quick Action Controls & Sanctuary Switcher -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="relative inline-flex items-center bg-surface-container-lowest px-space-md py-space-sm rounded-xl shadow-sm">
+<span class="material-symbols-outlined text-primary text-[20px] mr-2">nest_eco_leaf</span>
+<div class="flex flex-col text-left">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Invernadero Activo</span>
+<select class="bg-transparent font-title-md text-title-md text-on-surface font-semibold focus:outline-none cursor-pointer pr-4">
+<option>Invernadero Central de Fantasía (Domo Real)</option>
+<option>Orquidario Nocturno de las Hadas</option>
+<option>Conservatorio de Espinas Durmientes</option>
+</select>
+</div>
+</div>
+<button class="inline-flex items-center gap-space-xs px-space-lg py-3 rounded-xl bg-primary-container text-on-primary font-title-md text-title-md font-semibold shadow-md hover:bg-primary transition-all group" onclick="document.getElementById('specimen-modal').classList.remove('hidden')">
+<span class="material-symbols-outlined text-[20px] text-secondary-fixed group-hover:rotate-90 transition-transform">add_circle</span>
+<span>Registrar Espécimen</span>
+</button>
+</div>
+</div>
+<!-- Urgent Dispatch & Botanical Alerts Banners -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md mb-space-xl">
+<div class="flex items-start gap-space-md p-space-md rounded-xl bg-surface-container-lowest shadow-sm relative overflow-hidden group">
+<div class="w-1.5 absolute left-0 top-0 bottom-0 bg-secondary-container"></div>
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed/30 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">transfer_within_a_station</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-bold text-secondary">Alerta Botánica Urgente</span>
+<span class="font-label-sm text-label-sm text-outline">Prioridad Alta</span>
+</div>
+<p class="font-title-md text-title-md text-on-surface font-semibold mt-0.5">3 especímenes requieren trasplante inmediato</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+            Las raíces de <em>Rosa Eterna Carmín</em> han colmado sus macetas de cristal de roca en el Domo 4.
+          </p>
+</div>
+<button class="shrink-0 text-primary hover:text-secondary-fixed-variant transition-colors self-center p-2">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+<div class="flex items-start gap-space-md p-space-md rounded-xl bg-surface-container-lowest shadow-sm relative overflow-hidden group">
+<div class="w-1.5 absolute left-0 top-0 bottom-0 bg-tertiary-container"></div>
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed/30 text-tertiary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">auto_towing</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-bold text-tertiary">Logística Arcana</span>
+<span class="font-label-sm text-label-sm text-outline">En espera de salida</span>
+</div>
+<p class="font-title-md text-title-md text-on-surface font-semibold mt-0.5">5 pedidos con envío exprés en carruaje</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+            Sellos feéricos de preservación activos. El correo real aguarda en el patio exterior.
+          </p>
+</div>
+<button class="shrink-0 text-primary hover:text-secondary-fixed-variant transition-colors self-center p-2">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- High-Impact KPI Banners Bento -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md mb-space-xl">
+<!-- Metric 1: Monthly Sales -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline font-semibold">Tesoría &amp; Ventas Mes</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+</div>
+</div>
+<div>
+<span class="font-display-hero-mobile text-display-hero-mobile text-primary font-bold">€28,450.00</span>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="inline-flex items-center text-primary-container font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-[16px]">north_east</span> +18.4%
+            </span>
+<span class="font-body-sm text-body-sm text-outline">vs mes anterior</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-surface-variant/40 flex items-center justify-between text-outline font-label-sm text-label-sm">
+<span>Proyección bimestral</span>
+<span class="font-semibold text-on-surface">€34,200.00</span>
+</div>
+</div>
+<!-- Metric 2: Plants Dispatched -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline font-semibold">Plantas Despachadas</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">yard</span>
+</div>
+</div>
+<div>
+<span class="font-display-hero-mobile text-display-hero-mobile text-primary font-bold">642</span>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="inline-flex items-center text-primary-container font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-[16px]">verified</span> 100%
+            </span>
+<span class="font-body-sm text-body-sm text-outline">con hechizo de frescura</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-surface-variant/40 flex items-center justify-between text-outline font-label-sm text-label-sm">
+<span>Promedio diario</span>
+<span class="font-semibold text-on-surface">24 especímenes</span>
+</div>
+</div>
+<!-- Metric 3: Botanical Vitality -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline font-semibold">Supervivencia Botánica</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[18px]">temp_preferences_custom</span>
+</div>
+</div>
+<div>
+<span class="font-display-hero-mobile text-display-hero-mobile text-primary font-bold">99.2%</span>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="inline-flex items-center text-primary-container font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-[16px]">sentiment_very_satisfied</span> Óptima
+            </span>
+<span class="font-body-sm text-body-sm text-outline">satisfacción feérica</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-surface-variant/40 flex items-center justify-between text-outline font-label-sm text-label-sm">
+<span>Reclamaciones activas</span>
+<span class="font-semibold text-on-surface">1 en arbitraje</span>
+</div>
+</div>
+<!-- Metric 4: Critical Stock Alert -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline font-semibold">Stock Crítico Imperial</span>
+<div class="w-8 h-8 rounded-lg bg-error-container flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+</div>
+</div>
+<div>
+<div class="flex items-baseline gap-2">
+<span class="font-display-hero-mobile text-display-hero-mobile text-error font-bold">4</span>
+<span class="font-title-md text-title-md text-error font-semibold">especies</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="inline-flex items-center text-error font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[16px]">priority_high</span> En peligro de agotar
+            </span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-surface-variant/40 flex items-center justify-between text-outline font-label-sm text-label-sm">
+<span>Polinización en curso</span>
+<span class="font-semibold text-on-surface">8 brotes</span>
+</div>
+</div>
+</div>
+<!-- Analytical Visualization & Real-time Biome Breakdown -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-space-xl">
+<!-- Magical Category Analytics Bar Chart & Trend -->
+<div class="lg:col-span-8 bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-md border-b border-surface-variant/50 gap-space-sm">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Sensorica Comercial</span>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">Distribución de Ventas por Categoría Mágica</h2>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container px-3 py-1.5 rounded-full">
+<button class="px-2.5 py-1 rounded-full text-on-surface bg-surface-container-lowest shadow-xs font-label-sm text-label-sm font-semibold">Mensual</button>
+<button class="px-2.5 py-1 rounded-full text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm">Trimestre</button>
+<button class="px-2.5 py-1 rounded-full text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm">Ciclo Lunar</button>
+</div>
+</div>
+<!-- Custom SVG Chart of Magical Realms -->
+<div class="py-space-md">
+<div class="h-64 w-full flex flex-col justify-between">
+<svg class="w-full h-48 overflow-visible" preserveaspectratio="none" viewbox="0 0 700 200">
+<defs>
+<lineargradient id="goldGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#fed65b" stop-opacity="0.85"></stop>
+<stop offset="100%" stop-color="#735c00" stop-opacity="0.3"></stop>
+</lineargradient>
+<lineargradient id="forestGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#1b4332" stop-opacity="0.9"></stop>
+<stop offset="100%" stop-color="#012d1d" stop-opacity="0.4"></stop>
+</lineargradient>
+<lineargradient id="fairyGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#533048" stop-opacity="0.85"></stop>
+<stop offset="100%" stop-color="#ffd7ef" stop-opacity="0.25"></stop>
+</lineargradient>
+</defs>
+<!-- Guide lines -->
+<line stroke="#e0e3e8" stroke-dasharray="4" stroke-width="1" x1="0" x2="700" y1="0" y2="0"></line>
+<line stroke="#e0e3e8" stroke-dasharray="4" stroke-width="1" x1="0" x2="700" y1="50" y2="50"></line>
+<line stroke="#e0e3e8" stroke-dasharray="4" stroke-width="1" x1="0" x2="700" y1="100" y2="100"></line>
+<line stroke="#e0e3e8" stroke-dasharray="4" stroke-width="1" x1="0" x2="700" y1="150" y2="150"></line>
+<line stroke="#717973" stroke-width="1.5" x1="0" x2="700" y1="200" y2="200"></line>
+<!-- Category 1: Rosas de Cuento (Jan-Jun) -->
+<g class="transition-all hover:opacity-90">
+<rect fill="url(#goldGradient)" height="165" rx="6" width="45" x="50" y="35"></rect>
+<rect fill="url(#goldGradient)" height="175" rx="6" width="45" x="230" y="25"></rect>
+<rect fill="url(#goldGradient)" height="185" rx="6" width="45" x="410" y="15"></rect>
+<rect fill="url(#goldGradient)" height="190" rx="6" width="45" x="590" y="10"></rect>
+</g>
+<!-- Category 2: Selva Misteriosa -->
+<g class="transition-all hover:opacity-90">
+<rect fill="url(#forestGradient)" height="135" rx="6" width="45" x="105" y="65"></rect>
+<rect fill="url(#forestGradient)" height="145" rx="6" width="45" x="285" y="55"></rect>
+<rect fill="url(#forestGradient)" height="155" rx="6" width="45" x="465" y="45"></rect>
+<rect fill="url(#forestGradient)" height="170" rx="6" width="45" x="645" y="30"></rect>
+</g>
+<!-- Category 3: Suculentas de Hadas -->
+<g class="transition-all hover:opacity-90">
+<rect fill="url(#fairyGradient)" height="90" rx="6" width="45" x="160" y="110"></rect>
+<rect fill="url(#fairyGradient)" height="105" rx="6" width="45" x="340" y="95"></rect>
+<rect fill="url(#fairyGradient)" height="120" rx="6" width="45" x="520" y="80"></rect>
+</g>
+</svg>
+<div class="flex justify-around text-outline font-label-md text-label-md pt-2">
+<span>Semana I (Bruma)</span>
+<span>Semana II (Luna Creciente)</span>
+<span>Semana III (Plenilunio)</span>
+<span>Semana IV (Rocío Dorado)</span>
+</div>
+</div>
+</div>
+<!-- Legend and summary indicators -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md pt-space-md border-t border-surface-variant/40 mt-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="w-3.5 h-3.5 rounded-sm bg-secondary-container"></span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-bold">Rosas de Cuento</span>
+<span class="font-body-sm text-body-sm text-outline">€14,820 (52% del total)</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="w-3.5 h-3.5 rounded-sm bg-primary-container"></span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-bold">Selva Misteriosa</span>
+<span class="font-body-sm text-body-sm text-outline">€8,950 (31% del total)</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="w-3.5 h-3.5 rounded-sm bg-tertiary-container"></span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-bold">Suculentas de Hadas</span>
+<span class="font-body-sm text-body-sm text-outline">€4,680 (17% del total)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Side Radial Vitality & Chamber Health Status -->
+<div class="lg:col-span-4 bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-variant/50">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline font-semibold">Cuidado Mágico</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Vigor del Hábitat</h3>
+</div>
+<span class="material-symbols-outlined text-secondary text-[24px]">nest_farsight_weather</span>
+</div>
+<!-- Dial Visual Representation -->
+<div class="flex flex-col items-center justify-center my-space-md relative">
+<svg class="w-44 h-44 -rotate-90" viewbox="0 0 120 120">
+<!-- Background Arc -->
+<circle cx="60" cy="60" fill="transparent" r="50" stroke="#f1f4f9" stroke-width="10"></circle>
+<!-- Outer Hydration Arc (Emerald) -->
+<circle cx="60" cy="60" fill="transparent" r="50" stroke="#1b4332" stroke-dasharray="314" stroke-dashoffset="40" stroke-linecap="round" stroke-width="10"></circle>
+<!-- Inner Starlight Arc (Amber) -->
+<circle cx="60" cy="60" fill="transparent" r="38" stroke="#fed65b" stroke-dasharray="238" stroke-dashoffset="50" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute flex flex-col items-center text-center">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Índice Vital</span>
+<span class="font-headline-md text-headline-md font-bold text-primary">88<span class="text-secondary">%</span></span>
+<span class="font-label-sm text-label-sm text-primary-container font-semibold">Grado Sublime</span>
+</div>
+</div>
+<div class="space-y-space-xs bg-surface-container-low p-space-sm rounded-xl">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+              Humedad de Niebla Fría
+            </span>
+<span class="font-bold text-on-surface">76% HR</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+              Luz Solar Tamizada
+            </span>
+<span class="font-bold text-on-surface">14,200 Lux</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+              Resonancia Feérica
+            </span>
+<span class="font-bold text-on-surface">Estable (9.4 MHz)</span>
+</div>
+</div>
+<button class="mt-space-sm w-full py-2.5 rounded-lg bg-surface-container-high text-primary hover:bg-surface-variant transition-colors font-title-md text-title-md font-semibold text-center flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+          Ajustar Riego de Conservatorio
+        </button>
+</div>
+</div>
+<!-- Master Management Table: Recent Enchanted Orders & Live Inventory -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden mb-space-xl">
+<!-- Table Header & Controls -->
+<div class="p-space-lg flex flex-col sm:flex-row sm:items-center justify-between gap-space-md border-b border-surface-variant/50">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Bitácora Activa</span>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">Gestión de Encomiendas &amp; Especímenes</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Control de guardianes receptores, salvoconductos y estados de transporte.</p>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-[18px]">filter_list</span>
+<select class="pl-9 pr-6 py-2 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none cursor-pointer">
+<option>Todos los Estados</option>
+<option>Hechizo en Preparación</option>
+<option>En Camino por Carruaje</option>
+<option>Entregado con Éxito</option>
+</select>
+</div>
+<button class="px-3 py-2 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg font-body-sm text-body-sm flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+<span>Exportar Pergamino</span>
+</button>
+</div>
+</div>
+<!-- Interactive Data Table -->
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/70 text-outline font-label-md text-label-md uppercase tracking-wider">
+<th class="py-space-md px-space-lg">ID Pedido</th>
+<th class="py-space-md px-space-md">Espécimen Botánico</th>
+<th class="py-space-md px-space-md">Guardián / Destinatario</th>
+<th class="py-space-md px-space-md">Fecha de Arcano</th>
+<th class="py-space-md px-space-md">Estado del Conjuro</th>
+<th class="py-space-md px-space-lg text-right">Acciones Rápidas</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-variant/40 font-body-md text-body-md text-on-surface">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-md px-space-lg font-title-md text-title-md font-bold text-primary">
+                #EB-9842
+              </td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<img class="w-10 h-10 rounded-lg object-cover shadow-xs shrink-0" data-alt="A delicate glowing crimson fantasy rose sealed in an ornate glass cloche with golden runes floating around it, warm botanical lighting, ultra detailed Disney aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBhQ3EtlA2hpe1DdcTY3465INwYrexLzIvoZ3yLdNrFFTyB_y9QmzcvoKMDjXF3OtnrXPqxr-jHdrwj_W2NQJVz1xi9WHjDjlkqTfZcIhUukMvr3hfndWFS5FPiIuLwYVH_vYJDMjID6aKq50R4vr9K3KBqF0yhJ9GjZa4x1O1vpL9mf-uIajgg0wHhfBtE8Ts56Oz5DW6taG7JRrH5-QUACjTb29378ZjBodp6nLkNNgg1sfu9S-Lig"/>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md font-semibold text-on-surface truncate">Rosa Eterna Carmín</span>
+<span class="font-body-sm text-body-sm text-outline italic">Rosa aeterna rubra</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Lady Genevieve de Valois</span>
+<span class="font-body-sm text-body-sm text-outline">Palacio de Cristal, Ala Norte</span>
+</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap text-on-surface-variant font-body-sm text-body-sm">
+                Hoy, 10:45 AM
+              </td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-fixed/40 text-on-secondary-fixed-variant font-label-md text-label-md font-bold">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                  Hechizo en Preparación
+                </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-colors" title="Editar Stock">
+<span class="material-symbols-outlined text-[18px]">inventory</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-secondary-fixed-variant hover:bg-surface-container rounded-lg transition-colors" title="Imprimir Etiqueta Imperial">
+<span class="material-symbols-outlined text-[18px]">print</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary rounded-lg transition-colors" title="Ver Detalles Arcanos">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-md px-space-lg font-title-md text-title-md font-bold text-primary">
+                #EB-9841
+              </td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<img class="w-10 h-10 rounded-lg object-cover shadow-xs shrink-0" data-alt="A lush fantasy blue bell orchid glowing with gentle starlight motes inside a greenhouse setting, mist rolling over leaves, Pixar Disney botanical atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwy2okHBxqj2E5CG1D3_afhwE0D1jQo_dzYSztMN2AY7kutHATLn869DPx6-74YceB14ZTZVEd3kPfkG32XIxv-myzbTH-FldE5kRcDj1lpTgNJAAnbS5g9y8CqkPRoQw-L831-ywClbvK8-DxtWELW3enUNd4HkbeLEQbi-I6E4CqGSt8IIm0_CTfaoa0Vv3G2cD0dzZbvvXrGWNhs02zo8nMyChM5iGC8cT2XCWAb5yG-uIHN6lDvQ"/>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md font-semibold text-on-surface truncate">Orquídea de las Mareas</span>
+<span class="font-body-sm text-body-sm text-outline italic">Orchidaceae aetherea</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Maese Thorne el Silvano</span>
+<span class="font-body-sm text-body-sm text-outline">Gremio de Alquimistas de Niebla</span>
+</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap text-on-surface-variant font-body-sm text-body-sm">
+                Hoy, 08:15 AM
+              </td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-md text-label-md font-bold">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+                  En Camino por Carruaje
+                </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-colors" title="Editar Stock">
+<span class="material-symbols-outlined text-[18px]">inventory</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-secondary-fixed-variant hover:bg-surface-container rounded-lg transition-colors" title="Imprimir Etiqueta Imperial">
+<span class="material-symbols-outlined text-[18px]">print</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary rounded-lg transition-colors" title="Ver Detalles Arcanos">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-md px-space-lg font-title-md text-title-md font-bold text-primary">
+                #EB-9839
+              </td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<img class="w-10 h-10 rounded-lg object-cover shadow-xs shrink-0" data-alt="A magical miniature enchanted bonsai with luminescent jade leaves and tiny bioluminescent fairy lights curled on its trunk, fine art Disney rendering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZt9C6-MYwKhqJJV25dbGC_H-M7tjqxXlIE_bt4OteTQT9yQzPaFbPfqH55ODhRqOcFxUv2RN4FsKMR3oFyTarT2NYOdQ6WfvSWummUNAxBMKaHIS9ataWGsrFLTbF6pP0wzTiXrR7ap8JQIkpBXsX33Fj5P6y5cIsfVDEsVx75i5b2Fcqm9AotA3U-TZqb01U3hlV2mndbVXVK7iwH16jJL8mQiK9nLGZng55Gw3WkbgJRe_m9eEj9w"/>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md font-semibold text-on-surface truncate">Bonsái Sauce del Rocío</span>
+<span class="font-body-sm text-body-sm text-outline italic">Salix arcanum pumila</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Princesa Aurelia de Montmirail</span>
+<span class="font-body-sm text-body-sm text-outline">Torre del Alba, Suite Soberana</span>
+</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap text-on-surface-variant font-body-sm text-body-sm">
+                Ayer, 06:30 PM
+              </td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-fixed-dim/40 text-primary-container font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-[14px]">done_all</span>
+                  Entregado con Éxito
+                </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-colors" title="Editar Stock">
+<span class="material-symbols-outlined text-[18px]">inventory</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-secondary-fixed-variant hover:bg-surface-container rounded-lg transition-colors" title="Imprimir Etiqueta Imperial">
+<span class="material-symbols-outlined text-[18px]">print</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary rounded-lg transition-colors" title="Ver Detalles Arcanos">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-md px-space-lg font-title-md text-title-md font-bold text-primary">
+                #EB-9836
+              </td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<img class="w-10 h-10 rounded-lg object-cover shadow-xs shrink-0" data-alt="A fairy succulent with pastel purple crystalline petals that look like polished amethyst, dewdrops shining with sunlight, enchanted forest studio shot." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZncTpuB8ZVi-E2kFFIUIZ5kUcl00z3mtdGj7vpb1qplziVTHJaOrsZLzMKx7TIc0TNqspI-imR2buNgGj2OqFDacSjs2AyyExk8LIOdix576d538JOUb8XKMo8Yz6uvu2zTy_y-8of3umCPLCNE_MZq5JO58WpFIQzP2NBqGuldvmdIpGbRuJR_nwO8CxkjMn1vm-FXOjDNRtKf-kEwWrZEShFI99wEEuxs45bW1etvu4rbJSe1v3SQ"/>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md font-semibold text-on-surface truncate">Echeveria Amatista de Hada</span>
+<span class="font-body-sm text-body-sm text-outline italic">Crassulaceae nymphalis</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Señorita Clotilde Fallow</span>
+<span class="font-body-sm text-body-sm text-outline">Boticaria del Valle Esmeralda</span>
+</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap text-on-surface-variant font-body-sm text-body-sm">
+                Ayer, 02:10 PM
+              </td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-fixed-dim/40 text-primary-container font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-[14px]">done_all</span>
+                  Entregado con Éxito
+                </span>
+</td>
+<td class="py-space-md px-space-lg text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-colors" title="Editar Stock">
+<span class="material-symbols-outlined text-[18px]">inventory</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-secondary-fixed-variant hover:bg-surface-container rounded-lg transition-colors" title="Imprimir Etiqueta Imperial">
+<span class="material-symbols-outlined text-[18px]">print</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary rounded-lg transition-colors" title="Ver Detalles Arcanos">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination Bar -->
+<div class="px-space-lg py-space-md bg-surface-container-low/40 flex items-center justify-between border-t border-surface-variant/40">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Mostrando 4 de 128 órdenes arcanas</span>
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container disabled:opacity-40">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<span class="px-3 py-1 rounded-md bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold">1</span>
+<button class="px-3 py-1 rounded-md text-on-surface hover:bg-surface-container font-label-sm text-label-sm">2</button>
+<button class="px-3 py-1 rounded-md text-on-surface hover:bg-surface-container font-label-sm text-label-sm">3</button>
+<span class="text-outline px-1">...</span>
+<button class="px-3 py-1 rounded-md text-on-surface hover:bg-surface-container font-label-sm text-label-sm">12</button>
+<button class="p-1.5 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- MODAL: Registrar Nuevo Espécimen Botánico -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-primary/40 backdrop-blur-sm hidden" id="specimen-modal">
+<div class="bg-surface-container-lowest w-full max-w-2xl rounded-2xl shadow-xl overflow-hidden flex flex-col relative max-h-[921px]">
+<!-- Modal Header -->
+<div class="p-space-lg bg-surface-container-low flex items-center justify-between border-b border-surface-variant">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">potted_plant</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Bóveda Botánica Mayor</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Registrar Nuevo Espécimen Botánico</h3>
+</div>
+</div>
+<button class="p-2 text-outline hover:text-on-surface rounded-full hover:bg-surface-container transition-colors" onclick="document.getElementById('specimen-modal').classList.add('hidden')">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+</div>
+<!-- Modal Body Form -->
+<form class="p-space-lg overflow-y-auto space-y-space-md" onsubmit="event.preventDefault(); document.getElementById('specimen-modal').classList.add('hidden');">
+<!-- Botanical Name & Species -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Nombre Mágico Común</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-3 text-outline text-[18px]">local_florist</span>
+<input class="w-full pl-9 pr-3 py-2.5 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container" placeholder="ej. Jazmín de Medianoche" required="" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Especie Binomial (Latín Mágico)</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-3 text-outline text-[18px]">history_edu</span>
+<input class="w-full pl-9 pr-3 py-2.5 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container" placeholder="ej. Jasminum nocturnum astra" required="" type="text"/>
+</div>
+</div>
+</div>
+<!-- Clima y Hábitat & Nivel de Magia -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Clima / Domo Asignado</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-3 text-outline text-[18px]">thermostat</span>
+<select class="w-full pl-9 pr-3 py-2.5 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container cursor-pointer">
+<option>Selva Umbría Tropical (24°C, 85% HR)</option>
+<option>Cumbres Rocosas de Hadas (16°C, 50% HR)</option>
+<option>Domo Crepuscular (20°C, 65% HR)</option>
+<option>Bóveda Ártica de Escarcha Feérica (-2°C)</option>
+</select>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Nivel de Magia &amp; Luminiscencia</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-3 text-secondary text-[18px]">auto_awesome</span>
+<select class="w-full pl-9 pr-3 py-2.5 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container cursor-pointer">
+<option>Nivel I: Brillo Sutil de Luciérnaga</option>
+<option>Nivel II: Resonancia Aromática Encantada</option>
+<option>Nivel III: Resplandor Astral Nocturno</option>
+<option>Nivel IV: Singularidad Feérica Legendaria</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Precio Imperial, Stock Inicial y Tiempo de Riego -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md">
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Precio Imperial (€)</label>
+<input class="w-full px-3 py-2.5 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container" placeholder="85.00" required="" step="0.5" type="number"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Stock Inicial</label>
+<input class="w-full px-3 py-2.5 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container" placeholder="15" required="" type="number"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Ciclo de Riego</label>
+<input class="w-full px-3 py-2.5 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container" placeholder="Cada 3 lunas" type="text"/>
+</div>
+</div>
+<!-- Instrucciones Botánicas Especiales -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Cuidados Especiales &amp; Contrahechizos</label>
+<textarea class="w-full p-3 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container" placeholder="Detalle si la planta requiere rocío de agua lunar, luz indirecta o cantar melodías suaves para abrir sus capullos..." rows="3"></textarea>
+</div>
+<!-- Modal Footer Actions -->
+<div class="pt-space-md border-t border-surface-variant flex items-center justify-end gap-space-sm">
+<button class="px-space-md py-2.5 rounded-xl font-title-md text-title-md text-on-surface-variant hover:bg-surface-container transition-colors" onclick="document.getElementById('specimen-modal').classList.add('hidden')" type="button">
+            Descartar
+          </button>
+<button class="inline-flex items-center gap-2 px-space-lg py-2.5 rounded-xl bg-primary-container text-on-primary font-title-md text-title-md font-semibold hover:bg-primary shadow-md transition-all" type="submit">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+            Consagrar e Incorporar
+          </button>
+</div>
+</form>
+</div>
+</div>
+<script>
+    // Smooth closing on ESC key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        const modal = document.getElementById('specimen-modal');
+        if (modal && !modal.classList.contains('hidden')) {
+          modal.classList.add('hidden');
+        }
+      }
+    });
+  </script>
+</div></main></div></body></html>

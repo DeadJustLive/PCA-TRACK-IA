@@ -1,0 +1,404 @@
+{
+  "generated_at": "2026-10-22T19:53:12",
+  "nodes": [
+    {
+      "id": "docs.arquitectura",
+      "path": "docs/arquitectura.md",
+      "kind": "doc",
+      "limit": null,
+      "lines": 330,
+      "total_lines": 339,
+      "over_limit": false,
+      "contract": null,
+      "desc": "Arquitectura, componentes, contratos, flujos, ADRs, riesgos y pruebas",
+      "relations": [
+        "docs.modelo_datos",
+        "docs.reglas_backend",
+        "docs.reglas_ui",
+        "docs.estado_proyecto"
+      ]
+    },
+    {
+      "id": "docs.backlog_requisitos",
+      "path": "docs/backlog_requisitos.md",
+      "kind": "doc",
+      "limit": null,
+      "lines": 266,
+      "total_lines": 274,
+      "over_limit": false,
+      "contract": null,
+      "desc": "Backlog oficial de requisitos del sistema, historias de usuario y casos límite",
+      "relations": [
+        "docs.convenciones",
+        "docs.reglas_backend",
+        "docs.reglas_ui"
+      ]
+    },
+    {
+      "id": "docs.convenciones",
+      "path": "docs/convenciones.md",
+      "kind": "doc",
+      "limit": null,
+      "lines": 120,
+      "total_lines": 126,
+      "over_limit": false,
+      "contract": null,
+      "desc": "Convenciones generales del proyecto",
+      "relations": [
+        "docs.sistema_anotaciones"
+      ]
+    },
+    {
+      "id": "docs.estado_proyecto",
+      "path": "docs/estado_proyecto.md",
+      "kind": "doc",
+      "limit": null,
+      "lines": 191,
+      "total_lines": 201,
+      "over_limit": false,
+      "contract": null,
+      "desc": "Tablero de control y memoria del proyecto Anti-Amnesia",
+      "relations": [
+        "docs.convenciones",
+        "docs.backlog_requisitos",
+        "docs.modelo_datos",
+        "docs.arquitectura",
+        "docs.plan_sprints"
+      ]
+    },
+    {
+      "id": "docs.modelo_datos",
+      "path": "docs/modelo_datos.md",
+      "kind": "doc",
+      "limit": null,
+      "lines": 488,
+      "total_lines": 496,
+      "over_limit": false,
+      "contract": null,
+      "desc": "Modelo de datos, relaciones, integridad, estados y RLS",
+      "relations": [
+        "docs.backlog_requisitos",
+        "docs.arquitectura",
+        "docs.reglas_backend"
+      ]
+    },
+    {
+      "id": "docs.plan_sprints",
+      "path": "docs/plan_sprints.md",
+      "kind": "doc",
+      "limit": null,
+      "lines": 429,
+      "total_lines": 439,
+      "over_limit": false,
+      "contract": null,
+      "desc": "Plan maestro de sprints y tablero de tickets atómicos para el desarrollo del MVP",
+      "relations": [
+        "docs.estado_proyecto",
+        "docs.backlog_requisitos",
+        "docs.convenciones",
+        "docs.reglas_backend",
+        "docs.reglas_ui"
+      ]
+    },
+    {
+      "id": "docs.reglas_backend",
+      "path": "docs/reglas_backend.md",
+      "kind": "doc",
+      "limit": null,
+      "lines": 419,
+      "total_lines": 427,
+      "over_limit": false,
+      "contract": null,
+      "desc": "Reglas de base de datos, API BFF, Flow, errores, caché y performance",
+      "relations": [
+        "docs.convenciones",
+        "docs.modelo_datos",
+        "docs.arquitectura"
+      ]
+    },
+    {
+      "id": "docs.reglas_ui",
+      "path": "docs/reglas_ui.md",
+      "kind": "doc",
+      "limit": null,
+      "lines": 315,
+      "total_lines": 322,
+      "over_limit": false,
+      "contract": null,
+      "desc": "Reglas de diseño, tokens, componentes CVA, accesibilidad y estados de UI",
+      "relations": [
+        "docs.convenciones",
+        "docs.arquitectura"
+      ]
+    },
+    {
+      "id": "docs.sistema_anotaciones",
+      "path": "docs/sistema_anotaciones.md",
+      "kind": "doc",
+      "limit": null,
+      "lines": 129,
+      "total_lines": 135,
+      "over_limit": false,
+      "contract": null,
+      "desc": "Diccionario de anotaciones PCA y cómo usarlas",
+      "relations": [
+        "tools.pca_annotator"
+      ]
+    },
+    {
+      "id": "tools.pca_annotator",
+      "path": "tools/pca_annotator.py",
+      "kind": "service",
+      "limit": 250,
+      "lines": 202,
+      "total_lines": 214,
+      "over_limit": false,
+      "contract": "cli: annotate|graph|impact|check|selftest",
+      "desc": "CLI para inyectar anotaciones PCA, generar el grafo de impacto, detectar deriva y autoevaluarse",
+      "relations": [
+        "tools.pca_core",
+        "tools.pca_selftest",
+        "tools.readme",
+        "docs.sistema_anotaciones",
+        "docs.convenciones"
+      ]
+    },
+    {
+      "id": "tools.pca_core",
+      "path": "tools/pca_core.py",
+      "kind": "service",
+      "limit": 430,
+      "lines": 393,
+      "total_lines": 402,
+      "over_limit": false,
+      "contract": "core: load_config, annotate_file, build_graph, compute_impact, find_drift",
+      "desc": "Núcleo puro del anotador PCA: manifiesto, bloques, grafo e impacto sin CLI",
+      "relations": [
+        "tools.pca_annotator",
+        "tools.pca_selftest"
+      ]
+    },
+    {
+      "id": "tools.pca_selftest",
+      "path": "tools/pca_selftest.py",
+      "kind": "test",
+      "limit": 380,
+      "lines": 334,
+      "total_lines": 343,
+      "over_limit": false,
+      "contract": "run_selftest(",
+      "desc": "Pruebas doradas del anotador PCA: parser, inyección, grafo, impacto, deriva y códigos de salida",
+      "relations": [
+        "tools.pca_core",
+        "tools.pca_annotator"
+      ]
+    },
+    {
+      "id": "tools.readme",
+      "path": "tools/README.md",
+      "kind": "doc",
+      "limit": null,
+      "lines": 160,
+      "total_lines": 166,
+      "over_limit": false,
+      "contract": null,
+      "desc": "Guía de uso del anotador PCA y cómo agregar lenguajes",
+      "relations": [
+        "tools.pca_annotator"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "docs.arquitectura",
+      "to": "docs.modelo_datos",
+      "type": "relates"
+    },
+    {
+      "from": "docs.arquitectura",
+      "to": "docs.reglas_backend",
+      "type": "relates"
+    },
+    {
+      "from": "docs.arquitectura",
+      "to": "docs.reglas_ui",
+      "type": "relates"
+    },
+    {
+      "from": "docs.arquitectura",
+      "to": "docs.estado_proyecto",
+      "type": "relates"
+    },
+    {
+      "from": "docs.backlog_requisitos",
+      "to": "docs.convenciones",
+      "type": "relates"
+    },
+    {
+      "from": "docs.backlog_requisitos",
+      "to": "docs.reglas_backend",
+      "type": "relates"
+    },
+    {
+      "from": "docs.backlog_requisitos",
+      "to": "docs.reglas_ui",
+      "type": "relates"
+    },
+    {
+      "from": "docs.convenciones",
+      "to": "docs.sistema_anotaciones",
+      "type": "relates"
+    },
+    {
+      "from": "docs.estado_proyecto",
+      "to": "docs.convenciones",
+      "type": "relates"
+    },
+    {
+      "from": "docs.estado_proyecto",
+      "to": "docs.backlog_requisitos",
+      "type": "relates"
+    },
+    {
+      "from": "docs.estado_proyecto",
+      "to": "docs.modelo_datos",
+      "type": "relates"
+    },
+    {
+      "from": "docs.estado_proyecto",
+      "to": "docs.arquitectura",
+      "type": "relates"
+    },
+    {
+      "from": "docs.estado_proyecto",
+      "to": "docs.plan_sprints",
+      "type": "relates"
+    },
+    {
+      "from": "docs.modelo_datos",
+      "to": "docs.backlog_requisitos",
+      "type": "relates"
+    },
+    {
+      "from": "docs.modelo_datos",
+      "to": "docs.arquitectura",
+      "type": "relates"
+    },
+    {
+      "from": "docs.modelo_datos",
+      "to": "docs.reglas_backend",
+      "type": "relates"
+    },
+    {
+      "from": "docs.plan_sprints",
+      "to": "docs.estado_proyecto",
+      "type": "relates"
+    },
+    {
+      "from": "docs.plan_sprints",
+      "to": "docs.backlog_requisitos",
+      "type": "relates"
+    },
+    {
+      "from": "docs.plan_sprints",
+      "to": "docs.convenciones",
+      "type": "relates"
+    },
+    {
+      "from": "docs.plan_sprints",
+      "to": "docs.reglas_backend",
+      "type": "relates"
+    },
+    {
+      "from": "docs.plan_sprints",
+      "to": "docs.reglas_ui",
+      "type": "relates"
+    },
+    {
+      "from": "docs.reglas_backend",
+      "to": "docs.convenciones",
+      "type": "relates"
+    },
+    {
+      "from": "docs.reglas_backend",
+      "to": "docs.modelo_datos",
+      "type": "relates"
+    },
+    {
+      "from": "docs.reglas_backend",
+      "to": "docs.arquitectura",
+      "type": "relates"
+    },
+    {
+      "from": "docs.reglas_ui",
+      "to": "docs.convenciones",
+      "type": "relates"
+    },
+    {
+      "from": "docs.reglas_ui",
+      "to": "docs.arquitectura",
+      "type": "relates"
+    },
+    {
+      "from": "docs.sistema_anotaciones",
+      "to": "tools.pca_annotator",
+      "type": "relates"
+    },
+    {
+      "from": "tools.readme",
+      "to": "tools.pca_annotator",
+      "type": "relates"
+    },
+    {
+      "from": "tools.pca_annotator",
+      "to": "tools.pca_core",
+      "type": "relates"
+    },
+    {
+      "from": "tools.pca_annotator",
+      "to": "tools.pca_selftest",
+      "type": "relates"
+    },
+    {
+      "from": "tools.pca_annotator",
+      "to": "tools.readme",
+      "type": "relates"
+    },
+    {
+      "from": "tools.pca_annotator",
+      "to": "docs.sistema_anotaciones",
+      "type": "relates"
+    },
+    {
+      "from": "tools.pca_annotator",
+      "to": "docs.convenciones",
+      "type": "relates"
+    },
+    {
+      "from": "tools.pca_core",
+      "to": "tools.pca_annotator",
+      "type": "relates"
+    },
+    {
+      "from": "tools.pca_core",
+      "to": "tools.pca_selftest",
+      "type": "relates"
+    },
+    {
+      "from": "tools.pca_selftest",
+      "to": "tools.pca_core",
+      "type": "relates"
+    },
+    {
+      "from": "tools.pca_selftest",
+      "to": "tools.pca_annotator",
+      "type": "relates"
+    }
+  ],
+  "issues": {
+    "dangling": [],
+    "over_limit": [],
+    "missing_annotations": [],
+    "duplicate_ids": []
+  }
+}

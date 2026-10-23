@@ -1,0 +1,25 @@
+#!/bin/sh
+# Hook de integridad PCA (T-TOOL-01): bloquea commits con FK huérfana,
+# IDs duplicados o archivos del manifiesto sin anotar. El sobre-límite de
+# @limit es solo advertencia y no bloquea.
+#
+# Activación (una sola vez por clon):
+#   git config core.hooksPath tools/hooks
+#
+# Escape puntual para un commit ya revisado:
+#   git commit --no-verify
+
+# Sin python3 disponible no hay nada que validar: no bloqueamos el commit.
+command -v python3 >/dev/null 2>&1 || exit 0
+
+ROOT="$(git rev-parse --show-toplevel 2>/dev/null)" || exit 0
+cd "$ROOT" || exit 0
+
+[ -f tools/pca_annotator.py ] || exit 0
+
+if ! python3 tools/pca_annotator.py check --strict; then
+  echo ""
+  echo "[pca] check --strict falló: corrige las FK/IDs/archivos reportados arriba."
+  echo "[pca] Escape puntual (solo si ya revisaste el problema): git commit --no-verify"
+  exit 1
+fi

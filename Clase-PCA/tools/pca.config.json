@@ -1,0 +1,1342 @@
+{
+  "_annotation": {
+    "id": "tools.pca_config",
+    "kind": "config",
+    "desc": "Manifiesto del anotador PCA (JSON no admite comentarios; esta clave cumple el rol de bloque)",
+    "relates": [
+      "tools.pca_annotator"
+    ]
+  },
+  "base_dir": "..",
+  "roots": [
+    "docs",
+    "tools",
+    "IberoMuseos"
+  ],
+  "include": [
+    "**/*.py",
+    "**/*.md",
+    "**/*.css",
+    "**/*.html",
+    "**/*.kt",
+    "**/*.json"
+  ],
+  "exclude": [
+    "**/grafo.*",
+    "**/*.bak",
+    "**/build/**",
+    "**/.gradle/**",
+    "**/assets/**"
+  ],
+  "files": [
+    {
+      "path": "tools/pca_annotator.py",
+      "id": "tools.pca_annotator",
+      "kind": "service",
+      "limit": 250,
+      "contract": "cli: annotate|graph|impact|check|selftest",
+      "desc": "CLI para inyectar anotaciones PCA, generar el grafo de impacto, detectar deriva y autoevaluarse",
+      "relates": [
+        "tools.pca_core",
+        "tools.pca_selftest",
+        "tools.readme",
+        "docs.sistema_anotaciones",
+        "docs.convenciones"
+      ]
+    },
+    {
+      "path": "tools/pca_core.py",
+      "id": "tools.pca_core",
+      "kind": "service",
+      "limit": 430,
+      "contract": "core: load_config, annotate_file, build_graph, compute_impact, find_drift",
+      "desc": "Núcleo puro del anotador PCA: manifiesto, bloques, grafo e impacto sin CLI",
+      "relates": [
+        "tools.pca_annotator",
+        "tools.pca_selftest"
+      ]
+    },
+    {
+      "path": "tools/pca_selftest.py",
+      "id": "tools.pca_selftest",
+      "kind": "test",
+      "limit": 380,
+      "contract": "run_selftest(): (passed, failures)",
+      "desc": "Pruebas doradas del anotador PCA: parser, inyección, grafo, impacto, deriva y códigos de salida",
+      "relates": [
+        "tools.pca_core",
+        "tools.pca_annotator"
+      ]
+    },
+    {
+      "path": "tools/README.md",
+      "id": "tools.readme",
+      "kind": "doc",
+      "desc": "Guía de uso del anotador PCA y cómo agregar lenguajes",
+      "relates": [
+        "tools.pca_annotator"
+      ]
+    },
+    {
+      "path": "docs/sistema_anotaciones.md",
+      "id": "docs.sistema_anotaciones",
+      "kind": "doc",
+      "desc": "Diccionario de anotaciones PCA y cómo usarlas",
+      "relates": [
+        "tools.pca_annotator"
+      ]
+    },
+    {
+      "path": "docs/convenciones.md",
+      "id": "docs.convenciones",
+      "kind": "doc",
+      "desc": "Convenciones generales del proyecto",
+      "relates": [
+        "docs.sistema_anotaciones"
+      ]
+    },
+    {
+      "path": "docs/estado_proyecto.md",
+      "id": "docs.estado_proyecto",
+      "kind": "doc",
+      "desc": "Tablero de control y memoria del proyecto Anti-Amnesia",
+      "relates": [
+        "docs.convenciones",
+        "docs.backlog_requisitos",
+        "docs.modelo_datos",
+        "docs.arquitectura",
+        "docs.plan_sprints"
+      ]
+    },
+    {
+      "path": "docs/modelo_datos.md",
+      "id": "docs.modelo_datos",
+      "kind": "doc",
+      "desc": "Modelo de datos, relaciones, integridad, estados y RLS",
+      "relates": [
+        "docs.backlog_requisitos",
+        "docs.arquitectura",
+        "docs.reglas_backend"
+      ]
+    },
+    {
+      "path": "docs/arquitectura.md",
+      "id": "docs.arquitectura",
+      "kind": "doc",
+      "desc": "Arquitectura, componentes, contratos, flujos, ADRs, riesgos y pruebas",
+      "relates": [
+        "docs.modelo_datos",
+        "docs.reglas_backend",
+        "docs.reglas_ui",
+        "docs.estado_proyecto"
+      ]
+    },
+    {
+      "path": "docs/reglas_ui.md",
+      "id": "docs.reglas_ui",
+      "kind": "doc",
+      "desc": "Reglas de diseño, tokens, componentes CVA, accesibilidad y estados de UI",
+      "relates": [
+        "docs.convenciones",
+        "docs.arquitectura"
+      ]
+    },
+    {
+      "path": "docs/reglas_backend.md",
+      "id": "docs.reglas_backend",
+      "kind": "doc",
+      "desc": "Reglas de base de datos, API BFF, Flow, errores, caché y performance",
+      "relates": [
+        "docs.convenciones",
+        "docs.modelo_datos",
+        "docs.arquitectura"
+      ]
+    },
+    {
+      "path": "docs/backlog_requisitos.md",
+      "id": "docs.backlog_requisitos",
+      "kind": "doc",
+      "desc": "Backlog oficial de requisitos del sistema, historias de usuario y casos límite",
+      "relates": [
+        "docs.convenciones",
+        "docs.reglas_backend",
+        "docs.reglas_ui"
+      ]
+    },
+    {
+      "path": "docs/plan_sprints.md",
+      "id": "docs.plan_sprints",
+      "kind": "doc",
+      "desc": "Plan maestro de sprints y tablero de tickets atómicos para el desarrollo del MVP",
+      "relates": [
+        "docs.estado_proyecto",
+        "docs.backlog_requisitos",
+        "docs.convenciones",
+        "docs.reglas_backend",
+        "docs.reglas_ui"
+      ]
+    },
+    {
+      "path": "docs/auditoria_rendimiento.md",
+      "id": "docs.auditoria_rendimiento",
+      "kind": "doc",
+      "desc": "Auditoría de rendimiento de movimiento y transiciones: hallazgos, causa raíz y plan de optimización",
+      "relates": [
+        "home.artpanel",
+        "home.featuredcoursecard",
+        "home.screen",
+        "feature.shell",
+        "app.root",
+        "splash.screen",
+        "app.build.gradle"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/build.gradle.kts",
+      "id": "app.build.gradle",
+      "kind": "config",
+      "desc": "Configuración Gradle del módulo app: SDK, build types, features de build y dependencias del stack",
+      "relates": [
+        "core.theme"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/MuseoApp.kt",
+      "id": "app.entry",
+      "kind": "component",
+      "limit": 30,
+      "desc": "Clase Application de IberoMuseos: registra la red de seguridad anti-crash global",
+      "relates": [
+        "core.error.crashhandler"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/MainActivity.kt",
+      "id": "app.main",
+      "kind": "component",
+      "limit": 80,
+      "desc": "Actividad principal que monta el tema de marca y la navegación raíz Splash a Shell de la aplicación",
+      "relates": [
+        "app.entry",
+        "core.theme",
+        "app.root"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/app/IberoMuseosApp.kt",
+      "id": "app.root",
+      "kind": "component",
+      "limit": 70,
+      "contract": "composable: IberoMuseosApp()",
+      "desc": "Composable raíz de la aplicación: NavHost con las rutas splash y shell y transición de fundido entre ambas",
+      "relates": [
+        "app.main",
+        "feature.shell",
+        "splash.route",
+        "core.theme"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/core/error/AppError.kt",
+      "id": "core.error",
+      "kind": "model",
+      "limit": 76,
+      "contract": "errors: Database(ReadError, WriteError), Domain(InvalidWeight, EmptyCart, UnsupportedZone), Unknown(cause); val userMessage",
+      "desc": "Jerarquía sellada de errores de la app (datos locales, dominio e inesperados) con mensaje al usuario en español"
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/core/error/ErrorMapper.kt",
+      "id": "core.error.mapper",
+      "kind": "util",
+      "limit": 46,
+      "contract": "mapper: map(throwable): AppError",
+      "desc": "Fuente única que traduce cualquier Throwable a un AppError tipado de forma idempotente",
+      "relates": [
+        "core.error",
+        "core.network.error"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/core/error/GlobalCrashHandler.kt",
+      "id": "core.error.crashhandler",
+      "kind": "service",
+      "limit": 51,
+      "contract": "handler: lastHandledError, uncaughtException(thread, throwable)",
+      "desc": "Red de seguridad global anti-crash que mapea, registra y conserva la última excepción no controlada",
+      "relates": [
+        "core.error",
+        "core.error.mapper"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/core/network/error/NetworkError.kt",
+      "id": "core.network.error",
+      "kind": "model",
+      "limit": 49,
+      "contract": "errors: NoInternet, Timeout, ServerError(code), SerializationError, Unknown(cause)",
+      "desc": "Errores tipados de red y API que heredan de AppError con su mensaje al usuario",
+      "relates": [
+        "core.error"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/core/network/error/SafeApiCall.kt",
+      "id": "core.network.safecall",
+      "kind": "util",
+      "limit": 45,
+      "contract": "safeApiCall(dispatcher, apiCall): Result<T>",
+      "desc": "Función segura que ejecuta una llamada de red y delega el mapeo de errores en ErrorMapper",
+      "relates": [
+        "core.network.error",
+        "core.error.mapper"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/core/presentation/BaseViewModel.kt",
+      "id": "core.presentation.baseviewmodel",
+      "kind": "view",
+      "limit": 40,
+      "contract": "viewmodel: exceptionHandler, handleErrorState(error)",
+      "desc": "Base de ViewModels con CoroutineExceptionHandler como red de seguridad que degrada a estado Error",
+      "relates": [
+        "core.error",
+        "core.error.mapper"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/data/assets/JsonAssetReader.kt",
+      "id": "data.assetreader",
+      "kind": "service",
+      "limit": 48,
+      "contract": "reader: readText(assetPath)",
+      "desc": "Contrato e implementación de lectura de assets JSON fuera del hilo principal con AppError ante fallo",
+      "relates": [
+        "core.error"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/data/catalog/CatalogItem.kt",
+      "id": "data.catalog.model",
+      "kind": "model",
+      "limit": 48,
+      "contract": "models: CatalogItem, CatalogCategory, ItemModality",
+      "desc": "Modelo de dominio inmutable del ítem de catálogo con sus enums de categoría y modalidad"
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/data/catalog/CatalogDtos.kt",
+      "id": "data.catalog.dto",
+      "kind": "model",
+      "limit": 95,
+      "contract": "dtos: CatalogDataDto, CatalogMetadataDto, CatalogItemDto, toDomain()",
+      "desc": "DTOs Gson del asset de catálogo y su mapeo validado hacia el modelo de dominio",
+      "relates": [
+        "data.catalog.model"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/data/catalog/AssetCatalogSource.kt",
+      "id": "data.catalog.source",
+      "kind": "service",
+      "limit": 70,
+      "contract": "source: loadItems(): Result<List<CatalogItem>>, loadFeaturedItem(): Result<CatalogItem>",
+      "desc": "Fuente mínima del catálogo desde el asset sintético, lista para ser sustituida por Retrofit y Room en T08",
+      "relates": [
+        "data.assetreader",
+        "data.catalog.dto",
+        "data.catalog.model"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/core/theme/Color.kt",
+      "id": "core.theme.color",
+      "kind": "theme",
+      "limit": 110,
+      "contract": "roles: darkColorScheme, palette",
+      "desc": "Paleta de marca de mockups/design.md y esquema dark-only de Material 3"
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/core/theme/Type.kt",
+      "id": "core.theme.type",
+      "kind": "theme",
+      "limit": 110,
+      "contract": "typography: IberoMuseosTypography, families: PlayfairDisplay, Inter",
+      "desc": "Tipografía de marca offline: Playfair Display para títulos e Inter para cuerpo y UI"
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/core/theme/Spacing.kt",
+      "id": "core.theme.spacing",
+      "kind": "theme",
+      "limit": 50,
+      "contract": "spacing: xxs, xs, sm, md, lg, xl, xxl, LocalSpacing",
+      "desc": "Escala de espaciado sobre grilla de 4dp expuesta vía CompositionLocal (LocalSpacing)"
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/core/theme/Shape.kt",
+      "id": "core.theme.shape",
+      "kind": "theme",
+      "limit": 30,
+      "contract": "shapes: extraSmall, small, medium, large, extraLarge",
+      "desc": "Formas y radios de esquina de la marca para Material 3"
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/core/theme/Theme.kt",
+      "id": "core.theme",
+      "kind": "theme",
+      "limit": 110,
+      "contract": "theme: IberoMuseosTheme(content)",
+      "desc": "Tema dark-only global que orquesta color, tipografía, formas y espaciado de la marca",
+      "relates": [
+        "core.theme.color",
+        "core.theme.type",
+        "core.theme.shape",
+        "core.theme.spacing"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/shell/navigation/Destination.kt",
+      "id": "feature.shell.destination",
+      "kind": "component",
+      "limit": 80,
+      "contract": "routes: home, catalog, map, shipping, orders, settings, cart; titleRes, isTopLevel",
+      "desc": "Modelo de destinos de navegación: las cinco pestañas principales, las rutas secundarias y el título del encabezado"
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/shell/ui/MuseoShell.kt",
+      "id": "feature.shell",
+      "kind": "component",
+      "limit": 160,
+      "contract": "composable: MuseoShell(modifier)",
+      "desc": "Shell de navegación: encabezado de marca, título o flecha atrás según el destino, barra inferior y NavHost con Home, Catálogo, Mapa, Ajustes y placeholders",
+      "relates": [
+        "feature.shell.destination",
+        "feature.shell.placeholder",
+        "feature.shell.brandbar",
+        "home.route",
+        "settings.route",
+        "feature.catalog.route",
+        "feature.map.route",
+        "core.theme"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/shell/ui/BrandTopBar.kt",
+      "id": "feature.shell.brandbar",
+      "kind": "component",
+      "limit": 110,
+      "contract": "composable: BrandTopBar(cartCount, onCartClick, onSettingsClick, modifier)",
+      "desc": "Encabezado de marca del Inicio con logo, nombre, carrito con badge y acceso a Ajustes",
+      "relates": [
+        "core.theme"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/catalog/model/CatalogModels.kt",
+      "id": "feature.catalog.model",
+      "kind": "model",
+      "limit": 60,
+      "desc": "Modelos de dominio puros del Catálogo (cursos, materiales, publicaciones)",
+      "relates": [
+        "feature.catalog.state",
+        "feature.catalog.sampledata",
+        "feature.catalog.route"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/catalog/ui/CatalogUiState.kt",
+      "id": "feature.catalog.state",
+      "kind": "model",
+      "limit": 40,
+      "desc": "UiState del feature Catálogo con 4 estados explícitos",
+      "relates": [
+        "feature.catalog.model",
+        "feature.catalog.route",
+        "feature.catalog.viewmodel"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/catalog/data/CatalogSampleData.kt",
+      "id": "feature.catalog.sampledata",
+      "kind": "util",
+      "limit": 140,
+      "desc": "Datos sintéticos para pestañas Cursos/Materiales/Publicaciones",
+      "relates": [
+        "feature.catalog.state",
+        "feature.catalog.viewmodel",
+        "feature.catalog.model"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/catalog/viewmodel/CatalogViewModel.kt",
+      "id": "feature.catalog.viewmodel",
+      "kind": "component",
+      "limit": 100,
+      "desc": "ViewModel del Catálogo expone StateFlow y carga samples en init",
+      "relates": [
+        "feature.catalog.state",
+        "feature.catalog.sampledata",
+        "feature.catalog.route"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/catalog/ui/CatalogRoute.kt",
+      "id": "feature.catalog.route",
+      "kind": "component",
+      "limit": 90,
+      "desc": "Route stateful del Catálogo: conecta ViewModel con Screen y mapea dominio a tarjetas",
+      "relates": [
+        "feature.catalog.state",
+        "feature.catalog.viewmodel",
+        "feature.catalog.screen",
+        "feature.catalog.model"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/catalog/ui/CatalogScreen.kt",
+      "id": "feature.catalog.screen",
+      "kind": "component",
+      "limit": 150,
+      "contract": "composable: CatalogScreen(uiState, cards, query, selectedTab, onTabSelected, onQueryChanged, onFilterClick, onItemClick, onToggleFavorite, onAddToCart, onRetry)",
+      "desc": "CatalogScreen stateless con tabs, buscador y tarjetas de ítem",
+      "relates": [
+        "feature.catalog.route",
+        "feature.catalog.state",
+        "core.theme",
+        "feature.catalog.itemcard"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/catalog/ui/components/CatalogItemCard.kt",
+      "id": "feature.catalog.itemcard",
+      "kind": "component",
+      "limit": 110,
+      "contract": "composable: CatalogItemCard(id, type, title, imageUrl, metadata, priceLabel, isFavorite, onItemClick, onToggleFavorite, onAddToCart, modifier)",
+      "desc": "Tarjeta de ítem catálogo",
+      "relates": [
+        "feature.catalog.screen",
+        "core.theme"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/catalog/ui/components/CatalogStateContent.kt",
+      "id": "feature.catalog.statecontent",
+      "kind": "component",
+      "limit": 120,
+      "contract": "composable: CatalogStateContent(uiState, cards, onFilterClick, onItemClick, onToggleFavorite, onAddToCart, onRetry, modifier)",
+      "desc": "Render de estados del catálogo (carga, vacío, error, lista de tarjetas)",
+      "relates": [
+        "feature.catalog.screen",
+        "feature.catalog.state",
+        "feature.catalog.itemcard",
+        "core.theme"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/catalog/ui/components/FilterFullScreenDialog.kt",
+      "id": "feature.catalog.filterdialog",
+      "kind": "component",
+      "limit": 140,
+      "contract": "composable: FilterFullScreenDialog(isOpen, onDismiss, onApply, onClearAll, modifier, content)",
+      "desc": "Dialogo de filtros full-screen con footer fijo",
+      "relates": [
+        "feature.catalog.screen",
+        "core.theme"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/catalog/ui/CatalogPreviews.kt",
+      "id": "feature.catalog.previews",
+      "kind": "preview",
+      "limit": 110,
+      "desc": "Previews de Android Studio para las pantallas del Catálogo",
+      "relates": [
+        "feature.catalog.screen",
+        "feature.catalog.state",
+        "feature.catalog.itemcard",
+        "core.theme"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/catalog/ui/detail/ItemDetailUiState.kt",
+      "id": "feature.catalog.detail.state",
+      "kind": "model",
+      "limit": 40,
+      "desc": "UiState del detalle de ítem con estados explícitos Loading/Success/Error",
+      "relates": [
+        "feature.catalog.detail.viewmodel",
+        "feature.catalog.detail.route"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/catalog/viewmodel/ItemDetailViewModel.kt",
+      "id": "feature.catalog.detail.viewmodel",
+      "kind": "component",
+      "limit": 80,
+      "desc": "ViewModel del detalle de ítem: StateFlow con ítem de muestra y favorito en memoria",
+      "relates": [
+        "feature.catalog.detail.state",
+        "feature.catalog.detail.route",
+        "feature.catalog.sampledata"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/catalog/ui/detail/ItemDetailRoute.kt",
+      "id": "feature.catalog.detail.route",
+      "kind": "component",
+      "limit": 60,
+      "desc": "Route stateful del detalle de ítem: conecta el ViewModel con la Screen stateless",
+      "relates": [
+        "feature.catalog.detail.state",
+        "feature.catalog.detail.viewmodel",
+        "feature.catalog.detail.screen"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/catalog/ui/detail/ItemDetailScreen.kt",
+      "id": "feature.catalog.detail.screen",
+      "kind": "component",
+      "limit": 120,
+      "contract": "composable: ItemDetailScreen(uiState, onBack, onToggleFavorite, onAddToCart, onRetry, modifier)",
+      "desc": "ItemDetailScreen stateless: TopAppBar con volver/favorito y render de estados del ítem",
+      "relates": [
+        "feature.catalog.detail.route",
+        "feature.catalog.detail.state",
+        "feature.catalog.detail.body",
+        "feature.catalog.screen",
+        "core.theme"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/catalog/ui/detail/components/ItemDetailBody.kt",
+      "id": "feature.catalog.detail.body",
+      "kind": "component",
+      "limit": 90,
+      "contract": "composable: ItemDetailBody(item, modifier); ItemDetailAddToCartBar(isProcessing, onAddToCart, modifier)",
+      "desc": "Cuerpo visual del detalle (imagen, título, precio, descripción) y barra fija Añadir al carrito",
+      "relates": [
+        "feature.catalog.detail.screen",
+        "feature.catalog.detail.state",
+        "core.theme"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/catalog/ui/detail/ItemDetailPreviews.kt",
+      "id": "feature.catalog.detail.previews",
+      "kind": "preview",
+      "limit": 80,
+      "desc": "Previews de Android Studio para los estados del detalle de ítem",
+      "relates": [
+        "feature.catalog.detail.screen",
+        "feature.catalog.detail.state",
+        "core.theme"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/home/model/HomeModels.kt",
+      "id": "home.models",
+      "kind": "model",
+      "limit": 70,
+      "contract": "models: HomePanel, ActiveOrderSummary, FeaturedCourse",
+      "desc": "Modelos de presentación del Home: panel visual, resumen de solicitud activa y curso destacado",
+      "relates": [
+        "feature.shell.destination"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/home/ui/HomeUiState.kt",
+      "id": "home.uistate",
+      "kind": "model",
+      "limit": 60,
+      "contract": "states: Loading, Success(panels, activeOrder, featuredCourse), Empty, Error(message)",
+      "desc": "Estado inmutable del Home con los cuatro estados de UI y el slot de solicitud activa o destacado",
+      "relates": [
+        "home.models"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/home/data/HomeSampleData.kt",
+      "id": "home.sampledata",
+      "kind": "util",
+      "limit": 82,
+      "contract": "data: panels, activeOrder",
+      "desc": "Datos sintéticos locales del Home (paneles y solicitud activa) listos para reemplazar por el repositorio",
+      "relates": [
+        "home.models",
+        "feature.shell.destination"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/home/viewmodel/HomeViewModel.kt",
+      "id": "home.viewmodel",
+      "kind": "view",
+      "limit": 96,
+      "contract": "viewmodel: uiState: StateFlow<HomeUiState>, loadHome(), factory(context)",
+      "desc": "ViewModel del Home que carga el curso destacado desde el asset sintético y degrada a estado Error ante fallo",
+      "relates": [
+        "home.uistate",
+        "home.sampledata",
+        "data.catalog.source",
+        "core.presentation.baseviewmodel",
+        "core.error"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/home/ui/HomeRoute.kt",
+      "id": "home.route",
+      "kind": "component",
+      "limit": 46,
+      "contract": "composable: HomeRoute(onNavigateTo, modifier, viewModel)",
+      "desc": "Composable stateful del Home: conecta el ViewModel, observa su estado y delega en HomeScreen",
+      "relates": [
+        "home.viewmodel",
+        "home.screen",
+        "core.theme"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/home/ui/HomeScreen.kt",
+      "id": "home.screen",
+      "kind": "component",
+      "limit": 190,
+      "contract": "composable: HomeScreen(uiState, onNavigateTo, onRetry, modifier)",
+      "desc": "Pantalla de inicio stateless: cuatro paneles de acceso, slot de solicitud o destacado y estados Loading/Empty/Error",
+      "relates": [
+        "home.uistate",
+        "home.models",
+        "home.artpanel",
+        "home.activeordercard",
+        "home.featuredcoursecard",
+        "feature.shell.destination",
+        "core.theme"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/home/ui/components/ArtPanel.kt",
+      "id": "home.artpanel",
+      "kind": "component",
+      "limit": 165,
+      "contract": "composable: ArtPanel(panel, onClick, panelHeight, modifier, compact)",
+      "desc": "Panel reutilizable con imagen de obra, overlay degradado, kicker, título, subtítulo y fila CTA, accesible y clickable",
+      "relates": [
+        "home.models",
+        "core.theme"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/home/ui/components/ActiveOrderCard.kt",
+      "id": "home.activeordercard",
+      "kind": "component",
+      "limit": 130,
+      "contract": "composable: ActiveOrderCard(order, onClick, modifier)",
+      "desc": "Tarjeta de trazabilidad de la solicitud activa con estado y barra de progreso",
+      "relates": [
+        "home.models",
+        "core.theme"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/home/ui/components/FeaturedCourseCard.kt",
+      "id": "home.featuredcoursecard",
+      "kind": "component",
+      "limit": 110,
+      "contract": "composable: FeaturedCourseCard(course, onClick, modifier)",
+      "desc": "Card destacada de curso con imagen, textos y llamada a la acción al catálogo",
+      "relates": [
+        "home.models",
+        "core.theme"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/shell/ui/PlaceholderScreen.kt",
+      "id": "feature.shell.placeholder",
+      "kind": "component",
+      "limit": 50,
+      "contract": "composable: PlaceholderScreen(title, modifier)",
+      "desc": "Pantalla provisional que centra el nombre del destino mientras las features reales no existen",
+      "relates": [
+        "core.theme"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/home/ui/HomePreviews.kt",
+      "id": "home.previews",
+      "kind": "preview",
+      "limit": 92,
+      "contract": "previews: HomeScreen(Success con/sin solicitud, Loading, Empty, Error)",
+      "desc": "Previews de Android Studio para inspeccionar los estados y variantes del Home sin ejecutar la app",
+      "relates": [
+        "home.screen",
+        "home.uistate",
+        "home.sampledata",
+        "home.models",
+        "core.theme"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/splash/ui/SplashUiState.kt",
+      "id": "splash.uistate",
+      "kind": "model",
+      "limit": 30,
+      "contract": "states: Loading(message, progress), Ready",
+      "desc": "Estados de la pantalla de bienvenida: inicialización simulada en curso y lista para ingresar"
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/splash/data/SplashSampleData.kt",
+      "id": "splash.sampledata",
+      "kind": "util",
+      "limit": 40,
+      "contract": "data: loadingMessages",
+      "desc": "Mensajes sintéticos de inicialización del Splash, listos para reemplazar por la carga real"
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/splash/viewmodel/SplashViewModel.kt",
+      "id": "splash.viewmodel",
+      "kind": "component",
+      "limit": 70,
+      "contract": "state: StateFlow<SplashUiState>",
+      "desc": "ViewModel del Splash: simula la inicialización rotando mensajes y publicando el estado listo",
+      "relates": [
+        "splash.uistate",
+        "splash.sampledata"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/splash/ui/SplashRoute.kt",
+      "id": "splash.route",
+      "kind": "component",
+      "limit": 70,
+      "contract": "composable: SplashRoute(onEnterApp, modifier, viewModel)",
+      "desc": "Composable stateful del Splash: conecta el ViewModel, gobierna el auto-avance y delega en SplashScreen",
+      "relates": [
+        "splash.viewmodel",
+        "splash.screen"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/splash/ui/SplashScreen.kt",
+      "id": "splash.screen",
+      "kind": "component",
+      "limit": 175,
+      "contract": "composable: SplashScreen(uiState, onEnterApp, modifier)",
+      "desc": "Pantalla de bienvenida stateless: fondo con overlay, marca institucional y bloque inferior de carga o de ingreso",
+      "relates": [
+        "splash.uistate",
+        "core.theme"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/splash/ui/SplashPreviews.kt",
+      "id": "splash.previews",
+      "kind": "preview",
+      "limit": 50,
+      "contract": "previews: SplashScreen(Loading, Ready)",
+      "desc": "Previews de Android Studio de los dos estados de la pantalla de bienvenida",
+      "relates": [
+        "splash.screen",
+        "splash.uistate",
+        "core.theme"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/shell/ui/MuseoShellPreviews.kt",
+      "id": "feature.shell.previews",
+      "kind": "preview",
+      "limit": 40,
+      "contract": "previews: MuseoShell",
+      "desc": "Preview de Android Studio del Shell completo: encabezado de marca, barra inferior y Home",
+      "relates": [
+        "feature.shell",
+        "core.theme"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/settings/model/SettingsModels.kt",
+      "id": "settings.models",
+      "kind": "model",
+      "limit": 40,
+      "contract": "models: UserProfile",
+      "desc": "Modelo del perfil sintético que encabeza la pantalla de Configuración y Perfil"
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/settings/ui/SettingsUiState.kt",
+      "id": "settings.uistate",
+      "kind": "model",
+      "limit": 50,
+      "contract": "state: SettingsUiState(profile, notificationsEnabled, isDebugBuild, appVersion, buildLabel)",
+      "desc": "Estado inmutable de la pantalla de Configuración y Perfil",
+      "relates": [
+        "settings.models"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/settings/data/SettingsSampleData.kt",
+      "id": "settings.sampledata",
+      "kind": "util",
+      "limit": 50,
+      "contract": "data: profile, BUILD_LABEL, NOTIFICATIONS_ENABLED_DEFAULT",
+      "desc": "Datos sintéticos del perfil y etiquetas de laboratorio para la pantalla de Configuración y Perfil",
+      "relates": [
+        "settings.models"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/settings/viewmodel/SettingsViewModel.kt",
+      "id": "settings.viewmodel",
+      "kind": "component",
+      "limit": 70,
+      "contract": "state: StateFlow<SettingsUiState>",
+      "desc": "ViewModel de Configuración y Perfil: expone el estado y la preferencia de notificaciones en memoria",
+      "relates": [
+        "settings.uistate",
+        "settings.sampledata"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/settings/ui/SettingsRoute.kt",
+      "id": "settings.route",
+      "kind": "component",
+      "limit": 80,
+      "contract": "composable: SettingsRoute(onNavigateTo, onOpenDebugPanel, modifier, viewModel)",
+      "desc": "Composable stateful de Ajustes: conecta el ViewModel, gobierna el diálogo de reset y delega en SettingsScreen",
+      "relates": [
+        "settings.viewmodel",
+        "settings.screen",
+        "feature.shell.destination"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/settings/ui/SettingsScreen.kt",
+      "id": "settings.screen",
+      "kind": "component",
+      "limit": 180,
+      "contract": "composable: SettingsScreen(uiState, actions, showResetDialog, modifier)",
+      "desc": "Pantalla stateless de Configuración y Perfil: perfil, cuenta, preferencias, debug, legal, reset y pie",
+      "relates": [
+        "settings.uistate",
+        "settings.profilecard",
+        "settings.accountgroup",
+        "settings.preferencesgroup",
+        "settings.debugcard",
+        "settings.aboutgroup",
+        "settings.resetdialog",
+        "settings.group",
+        "feature.shell.destination",
+        "core.theme"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/settings/ui/components/SettingsProfileCard.kt",
+      "id": "settings.profilecard",
+      "kind": "component",
+      "limit": 110,
+      "contract": "composable: SettingsProfileCard(profile, onEditProfile, modifier)",
+      "desc": "Tarjeta de perfil sintético con avatar de iniciales, nombre, rol, correo y acceso a edición",
+      "relates": [
+        "settings.models",
+        "core.theme"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/settings/ui/components/SettingsGroup.kt",
+      "id": "settings.group",
+      "kind": "component",
+      "limit": 80,
+      "contract": "composable: SettingsGroup(title, modifier, content); SettingsDivider(modifier)",
+      "desc": "Contenedor de grupo de ajustes con título y divisor sutil reutilizable entre filas",
+      "relates": [
+        "core.theme"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/settings/ui/components/SettingsRow.kt",
+      "id": "settings.row",
+      "kind": "component",
+      "limit": 135,
+      "contract": "composable: SettingsRow(icon, title, description, modifier, trailing, onClick); SettingsRowValue(text, modifier, color)",
+      "desc": "Fila reutilizable de ajustes con ícono, título, descripción, valor y click opcional",
+      "relates": [
+        "core.theme"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/settings/ui/components/SettingsAccountGroup.kt",
+      "id": "settings.accountgroup",
+      "kind": "component",
+      "limit": 115,
+      "contract": "composable: SettingsAccountGroup(onNavigateTo, modifier)",
+      "desc": "Grupo Gestión de Cuenta: datos personales informativos, mis solicitudes y favoritos con navegación",
+      "relates": [
+        "settings.group",
+        "settings.row",
+        "feature.shell.destination"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/settings/ui/components/SettingsPreferencesGroup.kt",
+      "id": "settings.preferencesgroup",
+      "kind": "component",
+      "limit": 130,
+      "contract": "composable: SettingsPreferencesGroup(notificationsEnabled, onNotificationsChange, onSyncCache, modifier)",
+      "desc": "Grupo de preferencias: switch de notificaciones, sincronización de Room y sistema de medidas",
+      "relates": [
+        "settings.group",
+        "settings.row",
+        "core.theme"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/settings/ui/components/SettingsAboutGroup.kt",
+      "id": "settings.aboutgroup",
+      "kind": "component",
+      "limit": 105,
+      "contract": "composable: SettingsAboutGroup(buildLabel, appVersion, modifier)",
+      "desc": "Grupo Acerca de la Aplicación: privacidad normativa y versión del sistema con su build",
+      "relates": [
+        "settings.group",
+        "settings.row"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/settings/ui/components/SettingsDebugCard.kt",
+      "id": "settings.debugcard",
+      "kind": "component",
+      "limit": 115,
+      "contract": "composable: SettingsDebugCard(onOpenDebugPanel, modifier)",
+      "desc": "Tarjeta del modo simulación y pruebas visible solo en builds DEBUG, con acceso al panel de US-17",
+      "relates": [
+        "core.theme"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/settings/ui/components/ResetDataDialog.kt",
+      "id": "settings.resetdialog",
+      "kind": "component",
+      "limit": 80,
+      "contract": "composable: ResetDataDialog(onConfirm, onDismiss, modifier)",
+      "desc": "Diálogo de confirmación para restablecer los datos locales de prueba, con acción en color error",
+      "relates": [
+        "core.theme"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/settings/ui/SettingsPreviews.kt",
+      "id": "settings.previews",
+      "kind": "preview",
+      "limit": 70,
+      "contract": "previews: SettingsScreen(build release, build debug, diálogo de reset)",
+      "desc": "Previews de Android Studio de la pantalla de Ajustes en build release, build debug y con el diálogo de reset",
+      "relates": [
+        "settings.screen",
+        "settings.uistate",
+        "settings.sampledata",
+        "core.theme"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/test/java/cl/duoc/iberomuseos/core/error/ErrorMapperTest.kt",
+      "id": "test.error.mapper",
+      "kind": "test",
+      "limit": 82,
+      "contract": "tests: idempotencia, UnknownHost/IOException/SocketTimeout/HttpException/JsonSyntax/IllegalState",
+      "desc": "Pruebas JVM del mapeo centralizado de errores",
+      "relates": [
+        "core.error.mapper",
+        "core.error",
+        "core.network.error"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/test/java/cl/duoc/iberomuseos/core/network/error/SafeApiCallTest.kt",
+      "id": "test.network.safecall",
+      "kind": "test",
+      "limit": 55,
+      "contract": "tests: éxito, UnknownHostException y propagación sin envolver de un AppError",
+      "desc": "Pruebas JVM de la función safeApiCall y su mapeo de errores",
+      "relates": [
+        "core.network.safecall",
+        "core.network.error"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/test/java/cl/duoc/iberomuseos/data/catalog/AssetCatalogSourceTest.kt",
+      "id": "test.data.catalog",
+      "kind": "test",
+      "limit": 107,
+      "contract": "tests: parseo, destacado, JSON malformado y categoría desconocida",
+      "desc": "Pruebas JVM de la fuente de catálogo sobre asset con un lector JSON falso",
+      "relates": [
+        "data.catalog.source",
+        "data.catalog.model",
+        "data.catalog.dto",
+        "data.assetreader"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/test/java/cl/duoc/iberomuseos/data/synthetic/SyntheticDataFormatTest.kt",
+      "id": "test.data.synthetic",
+      "kind": "test",
+      "limit": 236,
+      "contract": "tests: coherencia de catálogo, museos, couriers y regla de cobertura",
+      "desc": "Auditoría sintáctica y de coherencia de los tres assets JSON sintéticos leídos del disco",
+      "relates": [
+        "data.catalog.source"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/map/model/VirtualMuseum.kt",
+      "id": "feature.map.model",
+      "kind": "model",
+      "limit": 70,
+      "contract": "domain: id, name, city, country, countryCode, typology, latitude, longitude, description, virtualVisitUrl, imageUrl",
+      "desc": "Dominio: museo virtual con coordenadas para osmdroid",
+      "relates": [
+        "feature.map.data.source",
+        "feature.map.viewmodel"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/map/data/MuseumDtos.kt",
+      "id": "feature.map.data.dto",
+      "kind": "dto",
+      "limit": 60,
+      "contract": "gson: VirtualMuseumsDto, MuseumDto, toDomain()",
+      "desc": "DTOs Gson para parsing de virtual_museums.json",
+      "relates": [
+        "feature.map.data.source"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/map/data/AssetVirtualMuseumSource.kt",
+      "id": "feature.map.data.source",
+      "kind": "data",
+      "limit": 90,
+      "contract": "source: getVirtualMuseums(): Result<List<VirtualMuseum>>",
+      "desc": "Fuente que lee assets/data/virtual_museums.json, parsea con Gson y mapea a dominio",
+      "relates": [
+        "feature.map.model",
+        "feature.map.data.dto",
+        "data.assetreader",
+        "core.error",
+        "core.network.safecall"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/map/ui/MapUiState.kt",
+      "id": "feature.map.state",
+      "kind": "state",
+      "limit": 60,
+      "contract": "sealed: Loading, Success(museums, filterCountry, selectedMuseum), Error(message), Empty",
+      "desc": "UI state inmutable para Map (UDF)",
+      "relates": [
+        "feature.map.model"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/map/viewmodel/MapViewModel.kt",
+      "id": "feature.map.viewmodel",
+      "kind": "viewmodel",
+      "limit": 140,
+      "contract": "viewmodel: init(carga con delay), loadMuseums, selectMuseum, setFilterCountry, setSearchQuery, toggleControlsExpanded, openVirtualVisit, shareMuseum, factory(context)",
+      "desc": "ViewModel que carga en init desde assets con muestra sintética de respaldo, filtra por país y gestiona selección (BaseViewModel)",
+      "relates": [
+        "feature.map.model",
+        "feature.map.data.source",
+        "feature.map.sampledata",
+        "feature.map.state",
+        "core.presentation.baseviewmodel",
+        "core.error"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/map/ui/MapScreen.kt",
+      "id": "feature.map.screen",
+      "kind": "component",
+      "limit": 420,
+      "contract": "composable: MapScreen(uiState, onSelectMuseum, onSetFilterCountry, onSearchQueryChange, onToggleControlsExpanded, onOpenVirtualVisit, onShare, onNavigateToDetail, modifier)",
+      "desc": "UI stateless de mapa con lienzo osmdroid a pantalla completa, barra flotante de búsqueda, chips, controles colapsables y tarjeta peek",
+      "relates": [
+        "feature.map.state",
+        "feature.map.model",
+        "feature.map.floating.topbar",
+        "feature.map.floating.controls",
+        "feature.map.peek.card",
+        "core.theme"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/map/ui/components/MapFloatingTopBar.kt",
+      "id": "feature.map.floating.topbar",
+      "kind": "component",
+      "limit": 175,
+      "contract": "composable: MapFloatingTopBar(searchQuery, onSearchQueryChange, activeCount, allMuseums, selectedCountry, onCountrySelected, modifier)",
+      "desc": "Barra superior flotante de mapa con emblema, buscador y carrusel de chips con banderas",
+      "relates": [
+        "feature.map.screen",
+        "feature.map.model",
+        "core.theme"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/map/ui/components/MapFloatingControls.kt",
+      "id": "feature.map.floating.controls",
+      "kind": "component",
+      "limit": 100,
+      "contract": "composable: MapFloatingControls(isExpanded, onToggleExpanded, onCenterMap, onZoomIn, onZoomOut, modifier)",
+      "desc": "Controles flotantes colapsables de mapa: centrado en Iberoamérica y zoom + / -",
+      "relates": [
+        "feature.map.screen",
+        "core.theme"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/map/ui/components/MapMuseumPeekCard.kt",
+      "id": "feature.map.peek.card",
+      "kind": "component",
+      "limit": 130,
+      "contract": "composable: MapMuseumPeekCard(museum, onDismiss, onExpandDetails, onShare, modifier); countryFlag(country)",
+      "desc": "Tarjeta flotante peek colapsada que se muestra al pulsar un marcador en el mapa",
+      "relates": [
+        "feature.map.screen",
+        "feature.map.model",
+        "core.theme"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/map/ui/MapPreviews.kt",
+      "id": "feature.map.previews",
+      "kind": "preview",
+      "limit": 110,
+      "contract": "previews: loading, successFiltered, empty, error",
+      "desc": "Previews de MapScreen para Android Studio",
+      "relates": [
+        "feature.map.state",
+        "feature.map.model",
+        "feature.map.screen",
+        "core.theme"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/map/ui/MapRoute.kt",
+      "id": "feature.map.route",
+      "kind": "component",
+      "limit": 80,
+      "contract": "composable: MapRoute(modifier, onNavigateToMuseumDetail, viewModel)",
+      "desc": "Route stateful de Map: conecta el ViewModel, filtra por país/búsqueda y maneja navegación a ficha de detalle",
+      "relates": [
+        "feature.map.viewmodel",
+        "feature.map.screen",
+        "feature.map.detail.route"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/map/data/MapSampleData.kt",
+      "id": "feature.map.sampledata",
+      "kind": "util",
+      "limit": 100,
+      "contract": "data: museums",
+      "desc": "Muestra sintética de museos iberoamericanos con coordenadas válidas, alineada con virtual_museums.json",
+      "relates": [
+        "feature.map.model",
+        "feature.map.viewmodel"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/map/ui/detail/MuseumDetailUiState.kt",
+      "id": "feature.map.detail.state",
+      "kind": "model",
+      "limit": 40,
+      "desc": "UiState del detalle de museo con estados explícitos Loading/Success/Error",
+      "relates": [
+        "feature.map.detail.viewmodel",
+        "feature.map.detail.route",
+        "feature.map.model"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/map/viewmodel/MuseumDetailViewModel.kt",
+      "id": "feature.map.detail.viewmodel",
+      "kind": "component",
+      "limit": 95,
+      "desc": "ViewModel del detalle de museo: StateFlow con museo de muestra y formateo de coordenadas",
+      "relates": [
+        "feature.map.detail.state",
+        "feature.map.detail.route",
+        "feature.map.model",
+        "feature.map.sampledata"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/map/ui/detail/MuseumDetailRoute.kt",
+      "id": "feature.map.detail.route",
+      "kind": "component",
+      "limit": 70,
+      "contract": "composable: MuseumDetailRoute(museumId, onBack, viewModel, modifier)",
+      "desc": "Route stateful del detalle de museo: conecta el ViewModel con la Screen stateless y gestiona Intents",
+      "relates": [
+        "feature.map.detail.state",
+        "feature.map.detail.viewmodel",
+        "feature.map.detail.screen"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/map/ui/detail/MuseumDetailScreen.kt",
+      "id": "feature.map.detail.screen",
+      "kind": "component",
+      "limit": 120,
+      "contract": "composable: MuseumDetailScreen(uiState, onBack, onOpenVirtualVisit, onShare, onRetry, modifier)",
+      "desc": "MuseumDetailScreen stateless: TopAppBar con volver y render de estados del museo",
+      "relates": [
+        "feature.map.detail.route",
+        "feature.map.detail.state",
+        "feature.map.detail.body",
+        "feature.map.detail.footer",
+        "feature.map.screen",
+        "core.theme"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/map/ui/detail/components/MuseumDetailBody.kt",
+      "id": "feature.map.detail.body",
+      "kind": "component",
+      "limit": 165,
+      "contract": "composable: MuseumDetailBody(item, modifier)",
+      "desc": "Cuerpo visual del detalle de museo: hero con badge, datos, coordenadas y especialidades",
+      "relates": [
+        "feature.map.detail.screen",
+        "feature.map.detail.state",
+        "core.theme"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/map/ui/detail/components/MuseumDetailFooterBar.kt",
+      "id": "feature.map.detail.footer",
+      "kind": "component",
+      "limit": 70,
+      "contract": "composable: MuseumDetailFooterBar(virtualVisitUrl, onOpenVirtualVisit, onShare, modifier)",
+      "desc": "Barra de acciones fija en el pie del detalle de museo",
+      "relates": [
+        "feature.map.detail.screen",
+        "core.theme"
+      ]
+    },
+    {
+      "path": "IberoMuseos/app/src/main/java/cl/duoc/iberomuseos/features/map/ui/detail/MuseumDetailPreviews.kt",
+      "id": "feature.map.detail.previews",
+      "kind": "preview",
+      "limit": 80,
+      "desc": "Previews de Android Studio para los estados del detalle de museo",
+      "relates": [
+        "feature.map.detail.screen",
+        "feature.map.detail.state",
+        "core.theme"
+      ]
+    }
+  ],
+  "options": {
+    "output_dir": "."
+  },
+  "languages": {
+    ".kts": {
+      "line_prefix": "//"
+    }
+  }
+}
